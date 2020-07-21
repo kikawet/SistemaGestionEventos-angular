@@ -5,7 +5,7 @@ import { CreacionEventoComponent } from './componentes/creacion-evento/creacion-
 import { FooterComponent } from './componentes/footer/footer.component';
 
 const routes: Routes = [
-  {path: '', component: InicioComponent},
+  {path: '', component: CreacionEventoComponent},
 
 ];
 
