@@ -3,9 +3,13 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "SistemaGestionEventos-angular": {
+    "SistemaGestionEventos": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,18 +17,17 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/SistemaGestionEventos-angular",
+            "outputPath": "dist/SistemaGestionEventos",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -41,6 +44,7 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
+              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -49,11 +53,6 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
                 }
               ]
             }
@@ -62,18 +61,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "SistemaGestionEventos-angular:build"
+            "browserTarget": "SistemaGestionEventos:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "SistemaGestionEventos-angular:build:production"
+              "browserTarget": "SistemaGestionEventos:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "SistemaGestionEventos-angular:build"
+            "browserTarget": "SistemaGestionEventos:build"
           }
         },
         "test": {
@@ -88,7 +87,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }
@@ -110,19 +109,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "SistemaGestionEventos-angular:serve"
+            "devServerTarget": "SistemaGestionEventos:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "SistemaGestionEventos-angular:serve:production"
+              "devServerTarget": "SistemaGestionEventos:serve:production"
             }
           }
         }
       }
-    }
-  },
-  "defaultProject": "SistemaGestionEventos-angular",
-  "cli": {
-    "analytics": "82f4cd51-1693-4bd9-b847-b62cfc522b2d"
-  }
+    }},
+  "defaultProject": "SistemaGestionEventos"
 }
