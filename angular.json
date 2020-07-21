@@ -3,9 +3,13 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "sge-app": {
+    "SistemaGestionEventos": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/sge-app",
+            "outputPath": "dist/SistemaGestionEventos",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,9 +27,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/bootstrap/scss/bootstrap.scss",
+              "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -57,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "sge-app:build"
+            "browserTarget": "SistemaGestionEventos:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "sge-app:build:production"
+              "browserTarget": "SistemaGestionEventos:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "sge-app:build"
+            "browserTarget": "SistemaGestionEventos:build"
           }
         },
         "test": {
@@ -83,7 +92,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }
@@ -105,15 +114,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "sge-app:serve"
+            "devServerTarget": "SistemaGestionEventos:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "sge-app:serve:production"
+              "devServerTarget": "SistemaGestionEventos:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "sge-app"
+  "defaultProject": "SistemaGestionEventos"
 }

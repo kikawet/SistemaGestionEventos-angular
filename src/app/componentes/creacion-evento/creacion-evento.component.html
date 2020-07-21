@@ -11,7 +11,80 @@
             <div class='form-group'>
                 <label for="TextBox">Nombre del evento</label>
                 <input type="text" class='form-control'>
+                <small id="subEvento" class="form-text text-muted"> Nombre con el que se asocia al evento</small>
             </div>
+
+            <div>
+				<label for='TextBox'>Descripción del evento</label>
+				
+					<input  type="text" id="inputDescripcion"
+						class="form-control"
+						placeholder='' aria-describedby='shortDesc' />
+					<small id='descripcionEvento' class='form-text text-muted'></small>
+            </div>
+            
+            <!--- div class='form-group'>
+				<label for='TextBox'>Tipo de Evento</label> <select
+					name="tipoEvento" class="custom-select">
+					<c:forEach items="<%=TipoEvento.values()%>" var="tipo">
+						<option>${tipo}</option>
+					</c:forEach>
+				</select> <small id='tipoEvento' class='form-text text-muted'></small>
+			</div !--->
+
+			<!---div class='form-group'>
+				<label for='TextBox'>Catalogación</label> <select
+					name="categoriaEvento" class="custom-select">
+					<c:forEach items="<%=CategoriaEvento.values()%>" var="categoria">
+						<option>${categoria}</option>
+					</c:forEach>
+				</select> <small id='tipoEvento' class='form-text text-muted'></small>
+			</div!--->
+
+			<div class='form-group'>
+				<label for='TextBox'>Lugar</label>
+				
+					<input id="inputLugar" type='text'
+						class="form-control"
+						placeholder='ej: Calle Cervantes, 4, 23700 Linares, Jaén'
+						aria-describedby='shortDesc' required="required" />
+					<small id='lugar' class='form-text text-muted'>Lugar donde
+						se celebraría</small>
+					
+			</div>
+
+			<div class='form-group'>
+				<label for='TextBox'>Fecha</label>
+			
+					<input  type="datetime-local" id="inputFecha"
+						class="form-control"
+						placeholder='' aria-describedby='shortDesc' required="required" />
+					<small id='fecha' class='form-text text-muted'></small>
+					
+			</div>
+
+
+
+			<div class='form-group'>
+				<label for='TextBox'>Aforo máximo</label>
+			
+					<input id="inputAforoMaximo" type="number"
+						class="form-control"
+						placeholder='ej:50' aria-describedby='shortDesc' required="required" />
+					<small id='aforo' class='form-text text-muted' ></small>
+			</div>
+
+			<div class='form-group'>
+				<label for='TextBox'>Fotografía</label>
+				
+					<input id="inputFoto" type="text" class='form-control'
+						placeholder='ej: https://www.google.com/imagen/123)'
+						aria-describedby='shortDesc' />
+					<small id='pieFoto' class='form-text text-muted'>Aquí tiene
+						que introducir una url de una foto</small>
+			</div>
+
+			<button type="submit" class='btn btn-primary'>Crear Evento</button>
         </form>
     </div>
 
