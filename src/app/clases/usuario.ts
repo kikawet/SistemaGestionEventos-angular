@@ -1,7 +1,7 @@
 import { RolUsuario } from "../enum/rol-usuario-enum";
 
 
-class Usuario {
+export class Usuario {
 
     login: string;
     password: string;
@@ -12,9 +12,7 @@ class Usuario {
     numEventosCreados: number;
     numEventosInscritos: number;
 
-    constructor(login: string, password: string) {
-        this.login = login;
-        this.password = password;
+    constructor(){
     }
 
     get _login(): string {

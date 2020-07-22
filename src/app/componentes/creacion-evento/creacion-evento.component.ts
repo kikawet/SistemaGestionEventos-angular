@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { Evento } from 'src/app/clases/evento';
 
 
 @Component({
   selector: 'app-creacion-evento',
-  template: '<div> </div>',
+  templateUrl: './creacion-evento.component.html',
   styleUrls: ['./creacion-evento.component.css']
 })
 export class CreacionEventoComponent implements OnInit {
-  constructor() { }
+  constructor(public evento: Evento) { }
 
   ngOnInit() {
+    
   }
 
 
