@@ -10,6 +10,11 @@ import { InicioComponent } from './componentes/inicio/inicio.component';
 import { NavComponent } from './componentes/nav/nav.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 
+import { ServicioEventoService } from './servicios/servicio-evento.service';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+
+import { ServicioCrearEventoService } from './servicios/servicio-crear-evento.service';
+import { LoginComponent } from './componentes/login/login.component';
 
 @NgModule({
   declarations: [
@@ -17,13 +22,15 @@ import { FooterComponent } from './componentes/footer/footer.component';
     CreacionEventoComponent,
     InicioComponent,
     NavComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ServicioCrearEventoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

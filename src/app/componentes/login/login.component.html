@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <base href="${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}/" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>login</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin my-5">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Login</h5>
+                        <form method="POST" cssClass="form-signin">
+
+                            <div class="form-group">
+                                <label for="inputLogin" class="">Usuario</label>
+                                <input type="text" id="inputLogin" class="form-control" name="username"
+                                    placeholder="login" />
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword">Contraseña</label>
+                                <input type="password" name="password" id="inputPassword" class="form-control"
+                                    placeholder="contraseña" />
+                            </div>
+
+                            <div class="custom-control custom-checkbox mb-3">
+                                <input type="checkbox" name="remember-me" class="custom-control-input"
+                                    id="customCheck1"> <label class="custom-control-label" for="customCheck1">Recordar
+                                    Contraseña</label>
+                            </div>
+
+                            <!--c:if test="${param.error != null}">
+                                <p class="alert alert-danger" role="alert">Login o contraseña incorrectas </p>
+                            </c:if-->
+                            <button class="btn btn-lg btn-block colorBoton text-uppercase" type="submit">Iniciar
+                                Sesión</button>
+                            <hr class="my-4">
+                            </form>
+                            <!--c:if test="${not empty error}">
+                                <section class="alert alert-danger my-auto" role="alert">${error}</section>
+                            </c:if-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,6 +1,7 @@
 import { TipoEvento } from '../enum/tipo-evento.enum';
 import { CategoriaEvento } from '../enum/categoria-evento.enum';
 import { EstadoUsuarioEvento } from '../enum/estado-usuario-evento.enum';
+
 export class Evento {
 
     private _id:number;
@@ -126,4 +127,5 @@ export class Evento {
         return this._estadoUsuario;
     }
 
+    
 }
