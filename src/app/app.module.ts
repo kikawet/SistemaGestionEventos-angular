@@ -3,25 +3,34 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { CreacionEventoComponent } from './componentes/creacion-evento/creacion-evento.component';
+
 import { InicioComponent } from './componentes/inicio/inicio.component';
 import { NavComponent } from './componentes/nav/nav.component';
 import { FooterComponent } from './componentes/footer/footer.component';
+
 import { ServicioEventoService } from './servicios/servicio-evento.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+
+import { ServicioCrearEventoService } from './servicios/servicio-crear-evento.service';
+import { LoginComponent } from './componentes/login/login.component';
+
 @NgModule({
   declarations: [
     AppComponent,
+    CreacionEventoComponent,
     InicioComponent,
     NavComponent,
-    FooterComponent
-    
+    FooterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [ServicioEventoService],
+  providers: [ServicioCrearEventoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

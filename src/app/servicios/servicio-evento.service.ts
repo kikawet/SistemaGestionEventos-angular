@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 const httpOptions = {
   headers: new HttpHeaders({ 
-    'Authorization':'Basic '+ btoa("admin" + ":" + "secreto22")    
+    'Authorization':'Basic '+ btoa("Patricio Ruiz:1234")    
   })
 };
 
@@ -16,7 +16,7 @@ export class ServicioEventoService {
   constructor(private http: HttpClient) { }
 
   getListaEventos(){
-    this.http.get("http://localhost:12021/sge-api/rest/evento",httpOptions).subscribe(data=>{
+    this.http.get("http://localhost:12021/sge-api/rest/evento", httpOptions).subscribe(data=>{
       console.log(data);
       
     });;
