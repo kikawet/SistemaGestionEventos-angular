@@ -1,11 +1,13 @@
 .imagen{
-    width: 28%;
+    margin-left: 50px;
+    width: 22%;
     float: left;
+    max-height: 235px;
 }
 .texto{
     width: 71%;
     float: right;
-    height: 235px;
+    max-height: 235px;
     overflow: auto;
     background: #C3C9CF;
 }

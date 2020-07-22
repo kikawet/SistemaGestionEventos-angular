@@ -15,10 +15,9 @@ export class ServicioEventoService {
 
   constructor(private http: HttpClient) { }
 
-  getListaEventos(){
-    this.http.get("http://localhost:12021/sge-api/rest/evento", httpOptions).subscribe(data=>{
-      console.log(data);
-      
-    });;
+  getListaEventos():Observable<any>{
+    return this.http.get("http://localhost:12021/sge-api/rest/evento", httpOptions);
   }
+
+  
 }
