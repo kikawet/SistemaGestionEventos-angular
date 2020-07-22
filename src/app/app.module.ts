@@ -11,6 +11,7 @@ import { NavComponent } from './componentes/nav/nav.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 
 import { ServicioCrearEventoService } from './servicios/servicio-crear-evento.service';
+import { LoginComponent } from './componentes/login/login.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ServicioCrearEventoService } from './servicios/servicio-crear-evento.se
     CreacionEventoComponent,
     InicioComponent,
     NavComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -3,9 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { InicioComponent } from './componentes/inicio/inicio.component';
 import { CreacionEventoComponent } from './componentes/creacion-evento/creacion-evento.component';
 import { FooterComponent } from './componentes/footer/footer.component';
+import { LoginComponent } from './componentes/login/login.component';
 
 const routes: Routes = [
-  {path: '', component: CreacionEventoComponent},
+  {path: '', component: LoginComponent},
 
 ];
 
