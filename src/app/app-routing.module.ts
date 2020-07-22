@@ -6,8 +6,9 @@ import { FooterComponent } from './componentes/footer/footer.component';
 import { LoginComponent } from './componentes/login/login.component';
 
 const routes: Routes = [
-  {path: '', component: LoginComponent},
-
+  {path: '', component: InicioComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'crearEvento', component: CreacionEventoComponent}
 ];
 
 @NgModule({

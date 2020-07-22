@@ -2,20 +2,23 @@
 
     <div>
         <img id="logo" alt="logo" class="mr-3" src="http://imgfz.com/i/VKDOJvy.png" style="width: 80px;">
-        <a href="${pageContext.request.contextPath}" class="btn btn-secondary active" role="button"
-            aria-pressed="true">Inicio</a>
+        <a class="btn btn-secondary active" role="button" aria-pressed="false" (click)="redireccion('/')">Inicio</a>
 
-        <a href="<s:url value='/evento/crea' />" class="btn btn-secondary" role="button" aria-pressed="true"
-            style="display:none"> Crear
+        <a *ngIf="servicioUsuario.isLogueado" class="btn btn-secondary" role="button" aria-pressed="true"
+            (click)="redireccion('crearEvento')"> Crear
             Evento</a>
 
-        <a href="<s:url value='/evento/crea' />" class="btn btn-secondary" role="button" aria-pressed="true"
-            style="display:none"> Mis Eventos</a>
+        <a *ngIf="servicioUsuario.isLogueado" class="btn btn-secondary" role="button" aria-pressed="true"> Mis
+            Eventos</a>
     </div>
 
     <div>
-        <a href="<s:url value='/usuario/login'/>" class="btn btn-outline-light" role="button"
-            aria-pressed="true">Iniciar
+        <a class="btn btn-outline-light" role="button" style="color: white;" aria-pressed="false"
+            (click)="redireccion('login')">Iniciar
+            sesión</a>
+
+        <a *ngIf="servicioUsuario.isLogueado" class="btn btn-outline-light" role="button" style="color: white;" aria-pressed="false"
+            (click)="servicioUsuario.logout()">Cerrar
             sesión</a>
     </div>
 
