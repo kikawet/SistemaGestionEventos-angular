@@ -16,10 +16,18 @@
             <img class="imgEvento" alt="img-evento"
                 src="{{e.foto}}">
         </div>
-        <div class=".col-md-8 texto">
+        <div class=".col-md-4 texto">
             <h1>{{e.titulo}}</h1>
             <small>Fecha: {{e.fecha | date:'short'}}</small>
             <p>{{e.descripcion}}</p>
+        </div>
+        <div *ngIf="servicioUsuario.isLogueado" class=".col-md-4 botones">
+            
+            <!-- <div [ngSwitch]="e.estadoUsuario">
+                <a *NgSwitchCase="ACEPTADO" type="button" class="btn btn-danger">Aceptado</a>
+                <a *NgSwitchCase="LISTA_DE_ESPERA" type="button" class="btn btn-danger">Lista de espera</a>
+                <a *NgSwitchDefault type="button" class="btn btn-danger">No inscrito</a>
+            </div> -->
         </div>
     </div>
     <app-footer></app-footer>
