@@ -15,6 +15,10 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { ServicioCrearEventoService } from './servicios/servicio-crear-evento.service';
 import { LoginComponent } from './componentes/login/login.component';
+import { ServicioUsuarioService } from './servicios/servicio-usuario.service';
+
+
+import { FormsModule } from '@angular/forms'; 
 
 @NgModule({
   declarations: [
@@ -28,9 +32,10 @@ import { LoginComponent } from './componentes/login/login.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule
   ],
-  providers: [ServicioCrearEventoService],
+  providers: [ServicioCrearEventoService,ServicioUsuarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

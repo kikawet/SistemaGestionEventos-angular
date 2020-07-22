@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServicioEventoService } from '../../servicios/servicio-evento.service';
 import { Router } from '@angular/router';
 import { Evento } from 'src/app/clases/evento';
+import { ServicioUsuarioService } from 'src/app/servicios/servicio-usuario.service';
 
 @Component({
   selector: 'app-inicio',
@@ -10,7 +11,7 @@ import { Evento } from 'src/app/clases/evento';
 })
 export class InicioComponent implements OnInit {
   public listaEventos:Array<Evento>;
-  constructor(private eventoServicio:ServicioEventoService,private router: Router) { 
+  constructor(private servicioUsuario: ServicioUsuarioService,private eventoServicio:ServicioEventoService,private router: Router) { 
     this.listaEventos=Array(0);
 
   }

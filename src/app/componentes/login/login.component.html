@@ -20,32 +20,34 @@
                 <div class="card card-signin my-5">
                     <div class="card-body">
                         <h5 class="card-title text-center">Login</h5>
-                        <form method="POST" cssClass="form-signin">
 
                             <div class="form-group">
                                 <label for="inputLogin" class="">Usuario</label>
-                                <input type="text" id="inputLogin" class="form-control" name="username"
+
+                                <input [(ngModel)]='username' type="text" id="inputLogin" class="form-control" name="username"
                                     placeholder="login" />
                             </div>
                             <div class="form-group">
                                 <label for="inputPassword">Contraseña</label>
-                                <input type="password" name="password" id="inputPassword" class="form-control"
+                                <input [(ngModel)]='password' type="password" name="password" id="inputPassword" class="form-control"
                                     placeholder="contraseña" />
                             </div>
 
-                            <div class="custom-control custom-checkbox mb-3">
-                                <input type="checkbox" name="remember-me" class="custom-control-input"
-                                    id="customCheck1"> <label class="custom-control-label" for="customCheck1">Recordar
-                                    Contraseña</label>
-                            </div>
+                            
 
                             <!--c:if test="${param.error != null}">
                                 <p class="alert alert-danger" role="alert">Login o contraseña incorrectas </p>
                             </c:if-->
-                            <button class="btn btn-lg btn-block colorBoton text-uppercase" type="submit">Iniciar
+                            <button class="btn btn-lg btn-block colorBoton text-uppercase"  (click)="login()">Iniciar
                                 Sesión</button>
                             <hr class="my-4">
-                            </form>
+
+                            <a (click)="redireccion('login')">Registrate!</a>
+
+                            <div id="errorLogin" class="alert alert-danger" role="alert" style="display:none">
+                                Usuario o contraseña incorrectos!!, Vuelve a intentarlo.
+                              </div>
+                            
                             <!--c:if test="${not empty error}">
                                 <section class="alert alert-danger my-auto" role="alert">${error}</section>
                             </c:if-->
