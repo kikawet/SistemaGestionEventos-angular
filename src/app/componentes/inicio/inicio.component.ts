@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./inicio.component.scss']
 })
 export class InicioComponent implements OnInit {
-
-  constructor() { }
+  public listaEventos;
+  constructor() { 
+    this.listaEventos=Array(3);
+  }
 
   ngOnInit() {
   }
