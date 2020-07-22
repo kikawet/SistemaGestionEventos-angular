@@ -1,4 +1,5 @@
-import { ObjectUnsubscribedError } from "rxjs";
+import { RolUsuario } from "../enum/rol-usuario-enum";
+
 
 class Usuario {
 
@@ -6,6 +7,7 @@ class Usuario {
     password: string;
     email: string;
     uId: string;
+    rol: RolUsuario;
 
     numEventosCreados: number;
     numEventosInscritos: number;
@@ -61,5 +63,13 @@ class Usuario {
 
     set _numEventosInscritos(value: number) {
         this.numEventosInscritos = value;
+    }
+
+    get _rolUsuario() {
+        return this.rol;
+    }
+
+    set _rolUsuario(value: RolUsuario) {
+        this.rol = value;
     }
 }
