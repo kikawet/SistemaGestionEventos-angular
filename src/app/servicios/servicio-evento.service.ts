@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpClientModule, HttpParams } from "@angular/
 import { Observable } from 'rxjs';
 import { ServicioUsuarioService } from './servicio-usuario.service';
 import { Usuario } from '../clases/usuario';
+import { Evento } from '../clases/evento';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -21,11 +22,12 @@ export class ServicioEventoService {
   }
   public idUsuario: string;
   private rootPath = "http://localhost:12021/sge-api/rest/evento";
+
   getListaEventos(): Observable<any> {
     return this.http.get(this.rootPath, httpOptions);
   }
 
-  crearEvento(evento:Evento):Observable<any> {
+  crearEvento(evento:Evento): Observable<any> {
     this.idUsuario=this.servicioUsuario.idUsuario;
     const myParams = new HttpParams()
       .set("id", this.idUsuario);
@@ -33,9 +35,11 @@ export class ServicioEventoService {
 
     //return this.http.get(this.rootPath + "/" + this.idUsuario, options);
 
-  getListaEventos():Observable<any>{
-    return this.http.get("http://localhost:12021/sge-api/rest/evento");
+    console.log("creación eveento peticion");
+
+    return this.http.post(this.rootPath, evento, httpOptions);
   }
+
 
   
   getListaEventosUsuario(uid: string):Observable<any> {
