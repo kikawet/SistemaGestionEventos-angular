@@ -23,11 +23,11 @@
         </div>
         <div *ngIf="servicioUsuario.isLogueado" class=".col-md-4 botones">
             
-            <!-- <div [ngSwitch]="e.estadoUsuario">
-                <a *NgSwitchCase="ACEPTADO" type="button" class="btn btn-danger">Aceptado</a>
-                <a *NgSwitchCase="LISTA_DE_ESPERA" type="button" class="btn btn-danger">Lista de espera</a>
-                <a *NgSwitchDefault type="button" class="btn btn-danger">No inscrito</a>
-            </div> -->
+            <div [ngSwitch]="estadoUsuarioEvento">
+                <a *ngSwitchCase="estadoUsuarioEvento.ACEPTADO" type="button" class="btn btn-danger">Aceptado</a>
+                <a *ngSwitchCase="estadoUsuarioEvento.LISTA_DE_ESPERA" type="button" class="btn btn-danger">Lista de espera</a>
+                <a *ngSwitchDefault type="button" class="btn btn-danger">No inscrito</a>
+            </div>
         </div>
     </div>
     <app-footer></app-footer>
