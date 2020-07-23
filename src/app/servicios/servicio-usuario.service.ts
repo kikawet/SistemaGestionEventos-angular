@@ -49,8 +49,26 @@ export class ServicioUsuarioService {
         .set("uId", this.idUsuario);
 
        const options = { headers: this.httpHeaders,  params: myParams };
-       console.log(options);
     
     return this.http.get(this.rootPath + "/" + this.idUsuario, options);
   }
+
+  getCreados(): Observable<any>{
+    const myParams = new HttpParams()
+        .set("uId", this.idUsuario);
+
+       const options = { headers: this.httpHeaders,  params: myParams };
+    
+    return this.http.get(this.rootPath + "/" + this.idUsuario + "/creados", options);
+  }
+
+  getInscritos(): Observable<any>{
+    const myParams = new HttpParams()
+        .set("uId", this.idUsuario);
+
+       const options = { headers: this.httpHeaders,  params: myParams };
+    
+    return this.http.get(this.rootPath + "/" + this.idUsuario + "/inscritos", options);
+  }
+
 }
