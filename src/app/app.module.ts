@@ -20,7 +20,8 @@ import { ServicioUsuarioService } from './servicios/servicio-usuario.service';
 
 import { FormsModule } from '@angular/forms';
 import { RegistroComponent } from './componentes/registro/registro.component';
-import { PerfilComponent } from './componentes/perfil/perfil.component'; 
+import { PerfilComponent } from './componentes/perfil/perfil.component';
+import { MisEventosComponent } from './componentes/mis-eventos/mis-eventos.component'; 
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { PerfilComponent } from './componentes/perfil/perfil.component';
     FooterComponent,
     LoginComponent,
     RegistroComponent,
-    PerfilComponent
+    PerfilComponent,
+    MisEventosComponent
   ],
   imports: [
     BrowserModule,

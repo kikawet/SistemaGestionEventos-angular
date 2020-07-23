@@ -17,7 +17,7 @@ export class PerfilComponent implements OnInit {
 
   ngOnInit() {
      if(!this.servicioUsuario.isLogueado)
-      this.router.navigate(["/login"]);
+      this.router.navigate(["login"]);
 
       this.servicioUsuario.getDetalles().subscribe(data => {
         this.perfil = data;        
