@@ -3,7 +3,6 @@ export enum CategoriaEvento {
 }
 
 export namespace CategoriaEvento {
-
     export function values() {
         return Object.keys(CategoriaEvento).filter(
             (type) => isNaN(<any>type) && type !== 'values'

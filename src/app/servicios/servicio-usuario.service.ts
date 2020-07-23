@@ -37,4 +37,6 @@ export class ServicioUsuarioService {
 
     return this.http.post(this.rootPath + "/registro", usuario);
   }
+
+  
 }
