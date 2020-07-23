@@ -16,7 +16,7 @@ export class Evento {
      idCreador:string;
      numAsistentes:number;
      numListaEspera:number;
-     estadoUsuario:EstadoUsuarioEvento;
+     estado:EstadoUsuarioEvento;
 
     constructor() {
     }
