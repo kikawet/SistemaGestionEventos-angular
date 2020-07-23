@@ -4,21 +4,20 @@
         <img id="logo" alt="logo" class="mr-3" src="http://imgfz.com/i/VKDOJvy.png" style="width: 80px;">
         <a class="btn btn-secondary active" role="button" aria-pressed="false" (click)="redireccion('/')">Inicio</a>
 
-        <a *ngIf="servicioUsuario.isLogueado" class="btn btn-secondary" role="button" aria-pressed="true"
-            (click)="redireccion('crearEvento')"> Crear
+        <a *ngIf="servicioUsuario.isLogueado" class="btn btn-secondary" role="button" aria-pressed="true" (click)="redireccion('crearEvento')"> Crear
             Evento</a>
 
-        <a *ngIf="servicioUsuario.isLogueado" class="btn btn-secondary" role="button" aria-pressed="true"> Mis
-            Eventos</a>
+
     </div>
 
     <div>
-        <a *ngIf="!servicioUsuario.isLogueado" class="btn btn-outline-light" role="button" style="color: white;" aria-pressed="false"
-            (click)="redireccion('login')">Iniciar
+
+        <a *ngIf="servicioUsuario.isLogueado" class="btn btn-secondary" role="button" aria-pressed="true" routerLink="/perfil" routerLinkActive="active"> Perfil </a>
+
+        <a *ngIf="!servicioUsuario.isLogueado" class="btn btn-outline-light" role="button" style="color: white;" aria-pressed="false" (click)="redireccion('login')">Iniciar
             sesión</a>
 
-        <a *ngIf="servicioUsuario.isLogueado" class="btn btn-outline-light" role="button" style="color: white;" aria-pressed="false"
-            (click)="servicioUsuario.logout()">Cerrar
+        <a *ngIf="servicioUsuario.isLogueado" class="btn btn-outline-light" role="button" style="color: white;" aria-pressed="false" (click)="servicioUsuario.logout()">Cerrar
             sesión</a>
     </div>
 

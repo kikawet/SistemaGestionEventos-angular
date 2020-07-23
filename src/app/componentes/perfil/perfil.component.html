@@ -1,0 +1,40 @@
+<app-nav></app-nav>
+
+<div class="container-fuild">
+    <div class="panel">
+        <div class="bg-secondary text-white text-center " style="height: 100px">
+            <h1 style="position: relative; top: 25px">Perfil de usuario</h1>
+        </div>
+        <br>
+        <div class="panel-body">
+
+            <div class="col">
+                <div class="container text-center">
+                    <h2>{{perfil.login}}</h2>
+                </div>
+                <hr>
+                <p align="center">
+                    <font size="5"><b>Email: </b></font>
+                    <span class="glyphicon glyphicon-envelope one" style="width: 50px; font-size: 22px">{{perfil.email}}</span>
+                </p>
+                <hr>
+                <p align="center">
+                    <font size="5"><b>Eventos creados: </b></font>
+                    <span class="glyphicon glyphicon-envelope one" style="width: 50px; font-size: 22px">{{perfil.numEventosCreados}}</span>
+
+
+
+                </p>
+                <hr>
+                <p align="center">
+                    <font size="5"><b>Eventos inscritos: </b></font>
+                    <span class="glyphicon glyphicon-envelope one" style="width: 50px; font-size: 22px">{{perfil.numEventosInscritos}}</span>
+
+                </p>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
