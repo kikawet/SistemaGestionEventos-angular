@@ -13,9 +13,9 @@
     </div>
     <div *ngIf="servicioUsuario.isLogueado" class=".col-md-4 botones">
 
-        <div [ngSwitch]="estadoUsuarioEvento">
-            <a *ngSwitchCase="estadoUsuarioEvento.ACEPTADO" type="button" class="btn btn-danger">Aceptado</a>
-            <a *ngSwitchCase="estadoUsuarioEvento.LISTA_DE_ESPERA" type="button" class="btn btn-danger">Lista de espera</a>
+        <div [ngSwitch]="e.estado">
+            <a *ngSwitchCase="estadoUsuarioEvento.ACEPTADO" type="button" class="btn btn-success">Aceptado</a>
+            <a *ngSwitchCase="estadoUsuarioEvento.LISTA_DE_ESPERA" type="button" class="btn btn-warning">Lista de espera</a>
             <a *ngSwitchDefault type="button" class="btn btn-danger">No inscrito</a>
         </div>
     </div>
@@ -34,9 +34,9 @@
     </div>
     <div *ngIf="servicioUsuario.isLogueado" class=".col-md-4 botones">
 
-        <div [ngSwitch]="estadoUsuarioEvento">
-            <a *ngSwitchCase="estadoUsuarioEvento.ACEPTADO" type="button" class="btn btn-danger">Aceptado</a>
-            <a *ngSwitchCase="estadoUsuarioEvento.LISTA_DE_ESPERA" type="button" class="btn btn-danger">Lista de espera</a>
+        <div [ngSwitch]="e.estado">
+            <a *ngSwitchCase="estadoUsuarioEvento.ACEPTADO" type="button" class="btn btn-success">Aceptado</a>
+            <a *ngSwitchCase="estadoUsuarioEvento.LISTA_DE_ESPERA" type="button" class="btn btn-warning">Lista de espera</a>
             <a *ngSwitchDefault type="button" class="btn btn-danger">No inscrito</a>
         </div>
     </div>

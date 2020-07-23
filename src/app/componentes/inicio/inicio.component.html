@@ -13,8 +13,7 @@
 
     <div class="evento" *ngFor="let e of listaEventos">
         <div class=".col-md-4 imagen">
-            <img class="imgEvento" alt="img-evento"
-                src="{{e.foto}}">
+            <img class="imgEvento" alt="img-evento" src="{{e.foto}}">
         </div>
         <div class=".col-md-4 texto">
             <h1>{{e.titulo}}</h1>
@@ -22,10 +21,10 @@
             <p>{{e.descripcion}}</p>
         </div>
         <div *ngIf="servicioUsuario.isLogueado" class=".col-md-4 botones">
-            
-            <div [ngSwitch]="estadoUsuarioEvento">
-                <a *ngSwitchCase="estadoUsuarioEvento.ACEPTADO" type="button" class="btn btn-danger">Aceptado</a>
-                <a *ngSwitchCase="estadoUsuarioEvento.LISTA_DE_ESPERA" type="button" class="btn btn-danger">Lista de espera</a>
+
+            <div [ngSwitch]="e.estado">
+                <a *ngSwitchCase="estadoUsuarioEvento.ACEPTADO" type="button" class="btn btn-success">Aceptado</a>
+                <a *ngSwitchCase="estadoUsuarioEvento.LISTA_DE_ESPERA" type="button" class="btn btn-warning">Lista de espera</a>
                 <a *ngSwitchDefault type="button" class="btn btn-danger">No inscrito</a>
             </div>
         </div>
