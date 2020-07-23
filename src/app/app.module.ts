@@ -19,7 +19,8 @@ import { ServicioUsuarioService } from './servicios/servicio-usuario.service';
 
 
 import { FormsModule } from '@angular/forms';
-import { RegistroComponent } from './componentes/registro/registro.component'; 
+import { RegistroComponent } from './componentes/registro/registro.component';
+import { PerfilComponent } from './componentes/perfil/perfil.component'; 
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { RegistroComponent } from './componentes/registro/registro.component';
     NavComponent,
     FooterComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,

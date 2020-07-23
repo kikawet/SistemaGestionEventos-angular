@@ -5,12 +5,14 @@ import { CreacionEventoComponent } from './componentes/creacion-evento/creacion-
 import { FooterComponent } from './componentes/footer/footer.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { RegistroComponent } from "./componentes/registro/registro.component";
+import { PerfilComponent } from "./componentes/perfil/perfil.component";
 
 const routes: Routes = [
   {path: '', component: InicioComponent},
   {path: 'login', component: LoginComponent},
   {path: 'crearEvento', component: CreacionEventoComponent},
-  {path: 'registro', component: RegistroComponent}
+  {path: 'registro', component: RegistroComponent},
+  {path: 'perfil', component: PerfilComponent}
 ];
 
 @NgModule({
