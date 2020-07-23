@@ -13,7 +13,7 @@
     </div>
 
     <div>
-        <a class="btn btn-outline-light" role="button" style="color: white;" aria-pressed="false"
+        <a *ngIf="!servicioUsuario.isLogueado" class="btn btn-outline-light" role="button" style="color: white;" aria-pressed="false"
             (click)="redireccion('login')">Iniciar
             sesión</a>
 

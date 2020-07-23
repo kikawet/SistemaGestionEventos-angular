@@ -1,15 +1,21 @@
 .imagen{
-    margin-left: 50px;
+    margin-left: 15px;
     width: 22%;
     float: left;
     max-height: 235px;
 }
 .texto{
-    width: 71%;
-    float: right;
+    width: 60%;
+    float: left;
+    margin-left: 15px;
     max-height: 235px;
     overflow: auto;
     background: #C3C9CF;
+}
+
+.botones{
+    float:left;
+    margin-left: 15px;
 }
 .imgEvento{
     width: 100%;
