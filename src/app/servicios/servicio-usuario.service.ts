@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpClientModule } from "@angular/common/http";
+import { HttpClient, HttpHeaders, HttpClientModule, HttpParams } from "@angular/common/http";
 import { Usuario } from '../clases/usuario';
 import { ClassGetter } from '@angular/compiler/src/output/output_ast';
 import { Observable } from 'rxjs';
@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class ServicioUsuarioService {
   private rootPath = "http://localhost:12021/sge-api/rest/usuario";
+  private httpHeaders ;
   public idUsuario:string;
   constructor(private http: HttpClient) { this.idUsuario=null }
 
@@ -26,6 +27,11 @@ export class ServicioUsuarioService {
     let usuario = new Usuario();
     usuario.login = login;
     usuario.password = password;
+
+    this.httpHeaders =  new HttpHeaders({ 
+        'Authorization':'Basic '+ btoa(login+':'+password)  
+      });
+
     return this.http.post(this.rootPath + "/login", usuario);
   }
 
@@ -38,5 +44,13 @@ export class ServicioUsuarioService {
     return this.http.post(this.rootPath + "/registro", usuario);
   }
 
-  
+  getDetalles(): Observable<any>{
+    const myParams = new HttpParams()
+        .set("uId", this.idUsuario);
+
+       const options = { headers: this.httpHeaders,  params: myParams };
+       console.log(options);
+    
+    return this.http.get(this.rootPath + "/" + this.idUsuario, options);
+  }
 }
