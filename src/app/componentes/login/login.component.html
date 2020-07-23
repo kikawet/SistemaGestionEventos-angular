@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <base href="${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}/" />
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <title>login</title>
 </head>
@@ -19,36 +18,42 @@
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                 <div class="card card-signin my-5">
                     <div class="card-body">
+                        <a routerLink="" routerLinkActive="active"> <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-box-arrow-left" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                      d="M4.354 11.354a.5.5 0 0 0 0-.708L1.707 8l2.647-2.646a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708 0z" />
+                            <path fill-rule="evenodd"
+                                      d="M11.5 8a.5.5 0 0 0-.5-.5H2a.5.5 0 0 0 0 1h9a.5.5 0 0 0 .5-.5z" />
+                            <path fill-rule="evenodd"
+                                      d="M14 13.5a1.5 1.5 0 0 0 1.5-1.5V4A1.5 1.5 0 0 0 14 2.5H7A1.5 1.5 0 0 0 5.5 4v1.5a.5.5 0 0 0 1 0V4a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5H7a.5.5 0 0 1-.5-.5v-1.5a.5.5 0 0 0-1 0V12A1.5 1.5 0 0 0 7 13.5h7z" />
+                          </svg></a>
                         <h5 class="card-title text-center">Login</h5>
 
-                            <div class="form-group">
-                                <label for="inputLogin" class="">Usuario</label>
+                        <div class="form-group">
+                            <label for="inputLogin" class="">Usuario</label>
 
-                                <input [(ngModel)]='username' type="text" id="inputLogin" class="form-control" name="username"
-                                    placeholder="login" />
-                            </div>
-                            <div class="form-group">
-                                <label for="inputPassword">Contraseña</label>
-                                <input [(ngModel)]='password' type="password" name="password" id="inputPassword" class="form-control"
-                                    placeholder="contraseña" />
-                            </div>
+                            <input [(ngModel)]='username' type="text" id="inputLogin" class="form-control" name="username" placeholder="login" />
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword">Contraseña</label>
+                            <input [(ngModel)]='password' type="password" name="password" id="inputPassword" class="form-control" placeholder="contraseña" />
+                        </div>
 
-                            
 
-                            <!--c:if test="${param.error != null}">
+
+                        <!--c:if test="${param.error != null}">
                                 <p class="alert alert-danger" role="alert">Login o contraseña incorrectas </p>
                             </c:if-->
-                            <button class="btn btn-lg btn-block colorBoton text-uppercase"  (click)="login()">Iniciar
+                        <button class="btn btn-lg btn-block colorBoton text-uppercase" (click)="login()">Iniciar
                                 Sesión</button>
-                            <hr class="my-4">
+                        <hr class="my-4">
 
-                            <a (click)="redireccion('login')">Registrate!</a>
+                        <a class="btn btn-lg btn-block colorBoton text-uppercase" routerLink="/registro" routerLinkActive="active">Registro</a>
 
-                            <div id="errorLogin" class="alert alert-danger" role="alert" style="display:none">
-                                Usuario o contraseña incorrectos!!, Vuelve a intentarlo.
-                              </div>
-                            
-                            <!--c:if test="${not empty error}">
+                        <div id="errorLogin" class="alert alert-danger" role="alert" style="display:none">
+                            Usuario o contraseña incorrectos!!, Vuelve a intentarlo.
+                        </div>
+
+                        <!--c:if test="${not empty error}">
                                 <section class="alert alert-danger my-auto" role="alert">${error}</section>
                             </c:if-->
                     </div>

@@ -18,7 +18,8 @@ import { LoginComponent } from './componentes/login/login.component';
 import { ServicioUsuarioService } from './servicios/servicio-usuario.service';
 
 
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
+import { RegistroComponent } from './componentes/registro/registro.component'; 
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FormsModule } from '@angular/forms';
     InicioComponent,
     NavComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
