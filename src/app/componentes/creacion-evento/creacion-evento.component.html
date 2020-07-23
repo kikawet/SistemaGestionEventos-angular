@@ -9,22 +9,22 @@
         <form>
             <div class='form-group'>
                 <label for="TextBox">Nombre del evento</label>
-                <input type="text" class='form-control'>
+                <input [(ngModel)]='titulo' name="titulo" type="text" class='form-control' required minlength="5" maxlength="100">
                 <small id="subEvento" class="form-text text-muted"> Nombre con el que se asocia al evento</small>
             </div>
 
             <div>
 				<label for='TextBox'>Descripción del evento</label>
 				
-					<input  type="text" id="inputDescripcion"
+					<input  [(ngModel)]='descripcion' name="descripcion" type="text" id="inputDescripcion"
 						class="form-control"
-						placeholder='' aria-describedby='shortDesc' />
+						placeholder='' aria-describedby='shortDesc' required minlength="20" maxlength="500"/>
 					<small id='descripcionEvento' class='form-text text-muted'></small>
             </div>
             
             <div class='form-group'>
 				<label for='TextBox'>Tipo de Evento</label> 
-				<select name="tipoEvento" class="custom-select">
+				<select [(ngModel)]='tipoE' name="tipoEvento" class="custom-select" required>
 					<option *ngFor="let t of tipoEvento.values();">{{ t }}</option>
 				</select>
 				<small id='tipoEvento' class='form-text text-muted'></small>
@@ -32,7 +32,7 @@
 
 			<div class='form-group'>
 				<label for='TextBox'>Catalogación</label> 
-				<select	name="categoriaEvento" class="custom-select">
+				<select	[(ngModel)]='categoria' name="categoria" class="custom-select" required>
 					<option *ngFor="let c of categoriaEvento.values();">{{ c }}</option>
 				</select> 
 				<small id='categoriaEvento' class='form-text text-muted'></small>
@@ -41,10 +41,10 @@
 			<div class='form-group'>
 				<label for='TextBox'>Lugar</label>
 				
-					<input id="inputLugar" type='text'
+					<input [(ngModel)]='lugar' name="lugar" id="inputLugar" type='text'
 						class="form-control"
 						placeholder='ej: Calle Cervantes, 4, 23700 Linares, Jaén'
-						aria-describedby='shortDesc' required="required" />
+						aria-describedby='shortDesc' required="required" minlength="8" maxlength="100"/>
 					<small id='lugar' class='form-text text-muted'>Lugar donde
 						se celebraría</small>
 					
@@ -53,9 +53,9 @@
 			<div class='form-group'>
 				<label for='TextBox'>Fecha</label>
 			
-					<input  type="datetime-local" id="inputFecha"
+					<input  [(ngModel)]='fecha' name="fecha" type="datetime-local" id="inputFecha"
 						class="form-control"
-						placeholder='' aria-describedby='shortDesc' required="required" />
+						placeholder='' aria-describedby='shortDesc' required="required" min="2020-07-23T00:00:00"/>
 					<small id='fecha' class='form-text text-muted'></small>
 					
 			</div>
@@ -65,23 +65,23 @@
 			<div class='form-group'>
 				<label for='TextBox'>Aforo máximo</label>
 			
-					<input id="inputAforoMaximo" type="number"
+					<input [(ngModel)]='aforo' name="aforo" id="inputAforoMaximo" type="number"
 						class="form-control"
-						placeholder='ej:50' aria-describedby='shortDesc' required="required" />
+						placeholder='ej:50' aria-describedby='shortDesc' required="required" min="10" max="1250"/>
 					<small id='aforo' class='form-text text-muted' ></small>
 			</div>
 
 			<div class='form-group'>
 				<label for='TextBox'>Fotografía</label>
 				
-					<input id="inputFoto" type="text" class='form-control'
+					<input [(ngModel)]='foto' name="foto" id="inputFoto" type="text" class='form-control'
 						placeholder='ej: https://www.google.com/imagen/123)'
-						aria-describedby='shortDesc' />
+						aria-describedby='shortDesc' required />
 					<small id='pieFoto' class='form-text text-muted'>Aquí tiene
 						que introducir una url de una foto</small>
 			</div>
 
-			<button type="submit" class='btn btn-primary'>Crear Evento</button>
+			<button class='btn btn-primary' (click)="crearEvento()" >Crear Evento</button>
         </form>
     </div>
 
